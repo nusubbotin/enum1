@@ -14,9 +14,18 @@ public class Car extends Transport implements CompetingTransport  {
         protected String getTypeName(){
             return typeName;
         }
+
+        protected void DetermineСarType(){
+            System.out.println("Тип автомобиля: " + this);
+        }
+
+        @Override
+        public String toString() {
+            return "typeName = " + typeName;
+        }
     }
 
-    private BodyType bodyType;
+    protected BodyType bodyType;
 
     public Car(String brand, String model, float engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);

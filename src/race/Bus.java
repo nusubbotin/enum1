@@ -30,8 +30,19 @@ public class Bus extends Transport implements CompetingTransport  {
         public int getMaxValue() {
             return maxValue;
         }
+
+        protected void DetermineСarType(){
+            System.out.println("Тип автомобиля: " + this);
+        }
+
+        @Override
+        public String toString() {
+            return "typeName = " + typeName +
+                    ", minValue = " + minValue +
+                    ", maxValue = " + maxValue;
+        }
     }
-    CapacityType capacityType;
+    protected CapacityType capacityType;
 
     public Bus(String brand, String model, float engineVolume, CapacityType capacityType) {
         super(brand, model, engineVolume);

@@ -46,17 +46,26 @@ public class Main {
             System.out.println();
             System.out.println("     !!!!ГОНКИ НАЧАЛИСЬ В РАЗНЫХ КВАЛИФИКАЦИЯХ!!!!");
             DriverB schumacherB = new DriverB("Шумахер", 30);
-            Car cur = (Car) race[0];
-            schumacherB.toRule(cur);
+            Car car = (Car) race[0];
+
+            System.out.println(car);
+            car.bodyType.DetermineСarType();
+            schumacherB.toRule(car);
             System.out.println();
 
             DriverC schumacherC = new DriverC("Чемптон мира Дакар", 15);
             CargoCar cargoCar = (CargoCar) race[6];
+
+            System.out.println(cargoCar);
+            cargoCar.carryingCapacity.DetermineСarType();
             schumacherC.toRule(cargoCar);
             System.out.println();
 
             DriverD schumacherD = new DriverD("Лучший шоссейный водитель года", 10);
             Bus bus = (Bus) race[3];
+
+            System.out.println(bus);
+            bus.capacityType.DetermineСarType();
             schumacherD.toRule(bus);
             System.out.println();
         }

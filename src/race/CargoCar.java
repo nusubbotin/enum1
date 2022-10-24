@@ -14,9 +14,18 @@ public class CargoCar extends Transport implements CompetingTransport{
         public String getCapacityDesription() {
             return capacityDesription;
         }
+
+        protected void DetermineСarType(){
+            System.out.println("Тип автомобиля: " + this);
+        }
+
+        @Override
+        public String toString() {
+            return "capacityDesription = " + capacityDesription;
+        }
     }
 
-    CarryingCapacity carryingCapacity;
+    protected CarryingCapacity carryingCapacity;
 
     public CargoCar(String brand, String model, float engineVolume, CarryingCapacity carryingCapacity) {
         super(brand, model, engineVolume);
