@@ -7,17 +7,17 @@ public class Main {
 
     private static void createRace() {
         Transport [] race = new Transport [9];
-        race[0] = new Car("лада", "гранта", 1.5f);
-        race[1] = new Car("Шевроле", "Ланос", 1.6f);
-        race[2] = new Car("Лада", "Приора", 1.6f);
+        race[0] = new Car("лада", "гранта", 1.5f, Car.BodyType.COUPE);
+        race[1] = new Car("Шевроле", "Ланос", 1.6f, Car.BodyType.CROSSOVER);
+        race[2] = new Car("Лада", "Приора", 1.6f, Car.BodyType.SEDAN);
         //
-        race[3] = new Bus("Скания", "Скания модель", 5.6f);
-        race[4] = new Bus("Круиз", "Мерседес", 5);
-        race[5] = new Bus("Савок", "Икарус", 4);
+        race[3] = new Bus("Скания", "Скания модель", 5.6f, Bus.CapacityType.BIG);
+        race[4] = new Bus("Круиз", "Мерседес", 5, Bus.CapacityType.VERY_BIG);
+        race[5] = new Bus("Савок", "Икарус", 4, Bus.CapacityType.AVERAGE);
         //
-        race[6] = new CargoCar("Самосвал", "Камаз", 6);
-        race[7] = new CargoCar("Карго", "Хендай", 4);
-        race[8] = new CargoCar("Карго престиж", "Дацун", 7);
+        race[6] = new CargoCar("Самосвал", "Камаз", 6, CargoCar.CarryingCapacity.N1);
+        race[7] = new CargoCar("Карго", "Хендай", 4, CargoCar.CarryingCapacity.N2);
+        race[8] = new CargoCar("Карго престиж", "Дацун", 7, CargoCar.CarryingCapacity.N3);
 
         for (Transport transport : race) {
             System.out.println(transport);

@@ -2,8 +2,25 @@ package race;
 
 public class Car extends Transport implements CompetingTransport  {
 
-    public Car(String brand, String model, float engineVolume) {
+    protected enum BodyType {
+        SEDAN("Седан"), HATCHBACK("Хетчбек"), COUPE("Купе"), UNIVERSAL("Универсал"), SUV("Внедорожник"), CROSSOVER("Кроссовер"), PICKUP("Пикап"), VAN("Фургон"), MINIVAN("Минивэн");
+
+        private String typeName;
+
+        BodyType(String typeName) {
+            this.typeName = typeName;
+        }
+
+        protected String getTypeName(){
+            return typeName;
+        }
+    }
+
+    private BodyType bodyType;
+
+    public Car(String brand, String model, float engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
+        this.bodyType = bodyType;
     }
 
     public void startMoving(){
