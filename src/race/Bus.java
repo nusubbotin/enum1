@@ -2,9 +2,51 @@ package race;
 
 public class Bus extends Transport implements CompetingTransport  {
 
+    protected enum CapacityType {
+        VERY_SMALL("особо малая", 0, 10)
+        , SMALL("малая", 10, 25)
+        , AVERAGE("средняя", 40, 50)
+        , BIG("большая", 60, 80)
+        , VERY_BIG("особо большая", 100, 120);
 
-    public Bus(String brand, String model, float engineVolume) {
+        private String typeName;
+        private int minValue;
+        private int maxValue;
+
+        CapacityType(String typeName, int minValue, int maxValue) {
+            this.typeName = typeName;
+            this.minValue = minValue;
+            this.maxValue = maxValue;
+        }
+
+        public String getTypeName() {
+            return typeName;
+        }
+
+        public int getMinValue() {
+            return minValue;
+        }
+
+        public int getMaxValue() {
+            return maxValue;
+        }
+
+        protected void DetermineСarType(){
+            System.out.println("Тип автомобиля: " + this);
+        }
+
+        @Override
+        public String toString() {
+            return "typeName = " + typeName +
+                    ", minValue = " + minValue +
+                    ", maxValue = " + maxValue;
+        }
+    }
+    protected CapacityType capacityType;
+
+    public Bus(String brand, String model, float engineVolume, CapacityType capacityType) {
         super(brand, model, engineVolume);
+        this.capacityType = capacityType;
     }
 
     public void startMoving(){
